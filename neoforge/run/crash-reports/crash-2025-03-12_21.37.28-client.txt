@@ -1,0 +1,208 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 2025-03-12 21:37:29
+Description: Unexpected error
+
+java.lang.IllegalStateException: Cannot get config value before config is loaded.
+	at MC-BOOTSTRAP/com.google.common@32.1.2-jre/com.google.common.base.Preconditions.checkState(Preconditions.java:512) ~[guava-32.1.2-jre.jar%23106!/:?] {}
+	at TRANSFORMER/neoforge@21.1.123/net.neoforged.neoforge.common.ModConfigSpec$ConfigValue.getRaw(ModConfigSpec.java:1235) ~[neoforge-21.1.123-minecraft.jar%23184!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.123/net.neoforged.neoforge.common.ModConfigSpec$ConfigValue.get(ModConfigSpec.java:1222) ~[neoforge-21.1.123-minecraft.jar%23184!/:?] {re:classloading}
+	at TRANSFORMER/couplings@1.0.0/com.ryankshah.couplings.ConfigHandler.serverCouplesDoors(ConfigHandler.java:35) ~[%23185!/:?] {re:classloading}
+	at TRANSFORMER/couplings@1.0.0/com.ryankshah.couplings.CouplingsClient.serverCouplesDoors(CouplingsClient.java:9) ~[%23185!/:?] {re:classloading}
+	at TRANSFORMER/couplings@1.0.0/com.ryankshah.couplings.CouplingsCommon.couplesDoors(CouplingsCommon.java:24) ~[%23185!/:?] {re:classloading}
+	at TRANSFORMER/couplings@1.0.0/com.ryankshah.couplings.impl.DoorBlockCoupling.used(DoorBlockCoupling.java:18) ~[%23185!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.DoorBlock.handler$zza000$couplings$usedWithoutItem(DoorBlock.java:555) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:couplings.mixins.json:DoorBlockMixin from mod couplings,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.DoorBlock.useWithoutItem(DoorBlock.java:213) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:couplings.mixins.json:DoorBlockMixin from mod couplings,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.useWithoutItem(BlockBehaviour.java:836) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.MultiPlayerGameMode.performUseItemOn(MultiPlayerGameMode.java:347) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.MultiPlayerGameMode.lambda$useItemOn$4(MultiPlayerGameMode.java:307) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.MultiPlayerGameMode.startPrediction(MultiPlayerGameMode.java:273) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.MultiPlayerGameMode.useItemOn(MultiPlayerGameMode.java:306) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.startUseItem(Minecraft.java:1756) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.handleKeybinds(Minecraft.java:2035) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.tick(Minecraft.java:1849) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1167) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:813) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.37/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.37.jar%23139!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.37/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.37.jar%23139!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.37/net.neoforged.fml.loading.targets.NeoForgeClientUserdevLaunchHandler.runService(NeoForgeClientUserdevLaunchHandler.java:23) ~[loader-4.0.37.jar%23139!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.37/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.37.jar%23139!/:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:55) [DevLaunch-1.0.1.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at MC-BOOTSTRAP/com.google.common@32.1.2-jre/com.google.common.base.Preconditions.checkState(Preconditions.java:512) ~[guava-32.1.2-jre.jar%23106!/:?] {}
+	at TRANSFORMER/neoforge@21.1.123/net.neoforged.neoforge.common.ModConfigSpec$ConfigValue.getRaw(ModConfigSpec.java:1235) ~[neoforge-21.1.123-minecraft.jar%23184!/:?] {re:classloading}
+	at TRANSFORMER/neoforge@21.1.123/net.neoforged.neoforge.common.ModConfigSpec$ConfigValue.get(ModConfigSpec.java:1222) ~[neoforge-21.1.123-minecraft.jar%23184!/:?] {re:classloading}
+	at TRANSFORMER/couplings@1.0.0/com.ryankshah.couplings.ConfigHandler.serverCouplesDoors(ConfigHandler.java:35) ~[%23185!/:?] {re:classloading}
+	at TRANSFORMER/couplings@1.0.0/com.ryankshah.couplings.CouplingsClient.serverCouplesDoors(CouplingsClient.java:9) ~[%23185!/:?] {re:classloading}
+	at TRANSFORMER/couplings@1.0.0/com.ryankshah.couplings.CouplingsCommon.couplesDoors(CouplingsCommon.java:24) ~[%23185!/:?] {re:classloading}
+	at TRANSFORMER/couplings@1.0.0/com.ryankshah.couplings.impl.DoorBlockCoupling.used(DoorBlockCoupling.java:18) ~[%23185!/:?] {re:mixin,re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.DoorBlock.handler$zza000$couplings$usedWithoutItem(DoorBlock.java:555) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:couplings.mixins.json:DoorBlockMixin from mod couplings,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.DoorBlock.useWithoutItem(DoorBlock.java:213) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:mixin,pl:accesstransformer:B,re:classloading,pl:accesstransformer:B,pl:mixin:APP:couplings.mixins.json:DoorBlockMixin from mod couplings,pl:mixin:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase.useWithoutItem(BlockBehaviour.java:836) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.MultiPlayerGameMode.performUseItemOn(MultiPlayerGameMode.java:347) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.MultiPlayerGameMode.lambda$useItemOn$4(MultiPlayerGameMode.java:307) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.MultiPlayerGameMode.startPrediction(MultiPlayerGameMode.java:273) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.multiplayer.MultiPlayerGameMode.useItemOn(MultiPlayerGameMode.java:306) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.startUseItem(Minecraft.java:1756) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.handleKeybinds(Minecraft.java:2035) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+-- Uptime --
+Details:
+	JVM uptime: 44.364s
+	Wall uptime: 29.295s
+	High-res time: 42.099s
+	Client ticks: 477 ticks / 23.850s
+Stacktrace:
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.fillReport(Minecraft.java:2409) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.emergencySaveAndCrash(Minecraft.java:874) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:834) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[neoforge-21.1.123-minecraft.jar%23183!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.37/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.37.jar%23139!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.37/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.37.jar%23139!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.37/net.neoforged.fml.loading.targets.NeoForgeClientUserdevLaunchHandler.runService(NeoForgeClientUserdevLaunchHandler.java:23) ~[loader-4.0.37.jar%23139!/:4.0] {}
+	at MC-BOOTSTRAP/fml_loader@4.0.37/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.37.jar%23139!/:4.0] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.4/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.4.jar%23121!/:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?] {}
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?] {}
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?] {}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {}
+	at net.neoforged.devlaunch.Main.main(Main.java:55) [DevLaunch-1.0.1.jar:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['Dev'/1, l='ClientLevel', x=-10.35, y=-60.00, z=3.40]]
+	Chunk stats: 961, 609
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,-60,0), Section: (at 0,4,0 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 237 game time, 237 day time
+	Server brand: neoforge
+	Server type: Integrated singleplayer server
+	Tracked entity count: 72
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: vanilla, mod_resources, mod/forgeconfigapiport, mod/couplings, mod/neoforge
+
+-- System Details --
+Details:
+	Minecraft Version: 1.21.1
+	Minecraft Version ID: 1.21.1
+	Operating System: Windows 11 (amd64) version 10.0
+	Java Version: 21.0.3, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 217732544 bytes (207 MiB) / 956301312 bytes (912 MiB) up to 8527020032 bytes (8132 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: 11th Gen Intel(R) Core(TM) i7-11390H @ 3.40GHz
+	Identifier: Intel64 Family 6 Model 140 Stepping 2
+	Microarchitecture: Tiger Lake
+	Frequency (GHz): 3.42
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: NVIDIA GeForce RTX 3050 Laptop GPU
+	Graphics card #0 vendor: NVIDIA
+	Graphics card #0 VRAM (MiB): 4096.00
+	Graphics card #0 deviceId: VideoController1
+	Graphics card #0 versionInfo: 32.0.15.6119
+	Graphics card #1 name: Intel(R) Iris(R) Xe Graphics
+	Graphics card #1 vendor: Intel Corporation
+	Graphics card #1 VRAM (MiB): 1024.00
+	Graphics card #1 deviceId: VideoController2
+	Graphics card #1 versionInfo: 30.0.101.1338
+	Memory slot #0 capacity (MiB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 3.20
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MiB): 16384.00
+	Memory slot #1 clockSpeed (GHz): 3.20
+	Memory slot #1 type: DDR4
+	Virtual memory max (MiB): 39390.83
+	Virtual memory used (MiB): 33087.20
+	Swap memory total (MiB): 6876.84
+	Swap memory used (MiB): 505.74
+	Space in storage for jna.tmpdir (MiB): <path not set>
+	Space in storage for org.lwjgl.system.SharedLibraryExtractPath (MiB): <path not set>
+	Space in storage for io.netty.native.workdir (MiB): <path not set>
+	Space in storage for java.io.tmpdir (MiB): available: 402804.69, total: 830941.00
+	Space in storage for workdir (MiB): available: 402804.69, total: 830941.00
+	JVM Flags: 0 total; 
+	Launched Version: 21.1.123
+	Backend library: LWJGL version 3.3.3+5
+	Backend API: NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 561.19, NVIDIA Corporation
+	Window size: 1700x1117
+	GFLW Platform: win32
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Is Modded: Definitely; Client brand changed to 'neoforge'; Server brand changed to 'neoforge'
+	Universe: 400921fb54442d18
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Render Distance: 12/12 chunks
+	Resource Packs: vanilla, mod_resources, mod/forgeconfigapiport, mod/couplings (incompatible), mod/neoforge
+	Current Language: en_us
+	Locale: en_GB
+	System encoding: Cp1252
+	File encoding: UTF-8
+	CPU: 8x 11th Gen Intel(R) Core(TM) i7-11390H @ 3.40GHz
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/1, l='ServerLevel[New World]', x=-10.35, y=-60.00, z=3.40]]
+	Active Data Packs: vanilla, mod_data, mod/forgeconfigapiport (incompatible), mod/couplings (incompatible), mod/neoforge
+	Available Data Packs: bundle, trade_rebalance, vanilla, mod/couplings (incompatible), mod/forgeconfigapiport (incompatible), mod/neoforge, mod_data
+	Enabled Feature Flags: minecraft:vanilla
+	World Generation: Stable
+	World Seed: -5289646618876806230
+	ModLauncher: 11.0.4+main.d2e20e43
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher services: 
+		sponge-mixin-0.15.2+mixin.0.8.7.jar mixin PLUGINSERVICE 
+		loader-4.0.37.jar slf4jfixer PLUGINSERVICE 
+		loader-4.0.37.jar runtime_enum_extender PLUGINSERVICE 
+		at-modlauncher-10.0.1.jar accesstransformer PLUGINSERVICE 
+		loader-4.0.37.jar runtimedistcleaner PLUGINSERVICE 
+		modlauncher-11.0.4.jar mixin TRANSFORMATIONSERVICE 
+		modlauncher-11.0.4.jar fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		javafml@4.0
+		lowcodefml@4.0
+		minecraft@4.0
+	Mod List: 
+		main                                              |Couplings                     |couplings                     |1.0.0               |Manifest: NOSIGNATURE
+		forgeconfigapiport-neoforge-21.1.3.jar            |Forge Config API Port         |forgeconfigapiport            |21.1.3              |Manifest: NOSIGNATURE
+		neoforge-21.1.123-minecraft.jar                   |Minecraft                     |minecraft                     |1.21.1              |Manifest: NOSIGNATURE
+		neoforge-21.1.123-minecraft.jar                   |NeoForge                      |neoforge                      |21.1.123            |Manifest: NOSIGNATURE
+	Crash Report UUID: 38c6af55-3b75-4073-8286-ef066fc86a54
+	FML: 4.0.37
+	NeoForge: 21.1.123

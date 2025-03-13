@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.ryankshah.couplings.mixin",
+  "refmap": "${mod_id}.refmap.json",
+  "compatibilityLevel": "JAVA_18",
+  "mixins": [
+    "DoorBlockMixin",
+    "FenceGateBlockMixin",
+    "TrapdoorBlockMixin"
+  ],
+  "client": [],
+  "server": [
+    "server.ServerPlayerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
+
