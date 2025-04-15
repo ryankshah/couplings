@@ -14,9 +14,9 @@
   </component>
   <component name="McpModuleSettings">
     <option name="mappingFile" value="C:\Users\ryank\Documents\couplings\forge\build\createMcpToSrg\output.tsrg" />
-    <option name="mcpVersion" value="official_1.21.4" />
-    <option name="minecraftVersion" value="1.21.4" />
-    <option name="platformVersion" value="54.1.0" />
+    <option name="mcpVersion" value="official_1.21.5" />
+    <option name="minecraftVersion" value="1.21.5" />
+    <option name="platformVersion" value="55.0.1" />
     <option name="srgType" value="TSRG" />
   </component>
 </module>
