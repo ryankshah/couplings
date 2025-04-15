@@ -18,8 +18,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-import javax.annotation.Nullable;
-
 @Mixin(FenceGateBlock.class)
 abstract class FenceGateBlockMixin extends HorizontalDirectionalBlock {
     FenceGateBlockMixin(final Properties properties) {
@@ -69,7 +67,7 @@ abstract class FenceGateBlockMixin extends HorizontalDirectionalBlock {
                                     + ")Z"),
             locals = LocalCapture.CAPTURE_FAILHARD)
     private void neighborChanged(
-            BlockState p_57547_, Level p_57548_, BlockPos p_57549_, Block p_57550_, @Nullable Orientation p_364404_, boolean p_57552_, CallbackInfo ci) {
+            BlockState p_57547_, Level p_57548_, BlockPos p_57549_, Block p_57550_, Orientation p_364404_, boolean p_57552_, CallbackInfo ci) {
         FenceGateBlockCoupling.neighborChanged(p_57547_, p_57548_, p_57549_, p_57548_.hasNeighborSignal(p_57549_));
     }
 }

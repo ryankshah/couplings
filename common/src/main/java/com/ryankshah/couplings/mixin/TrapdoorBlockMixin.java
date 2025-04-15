@@ -2,7 +2,6 @@ package com.ryankshah.couplings.mixin;
 
 import com.ryankshah.couplings.impl.TrapdoorBlockCoupling;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -19,8 +18,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-
-import javax.annotation.Nullable;
 
 @Mixin(TrapDoorBlock.class)
 abstract class TrapdoorBlockMixin extends HorizontalDirectionalBlock
@@ -71,7 +68,7 @@ abstract class TrapdoorBlockMixin extends HorizontalDirectionalBlock
                                     + ")Z"),
             locals = LocalCapture.CAPTURE_FAILHARD)
     private void neighborChanged(
-            BlockState p_57547_, Level p_57548_, BlockPos p_57549_, Block p_57550_, @Nullable Orientation p_364404_, boolean p_57552_, CallbackInfo ci) {
+            BlockState p_57547_, Level p_57548_, BlockPos p_57549_, Block p_57550_, Orientation p_364404_, boolean p_57552_, CallbackInfo ci) {
         TrapdoorBlockCoupling.neighborChanged(p_57547_, p_57548_, p_57549_, p_57548_.hasNeighborSignal(p_57549_));
     }
 }
