@@ -1,6 +1,7 @@
 package com.ryankshah.couplings.mixin;
 
 import com.ryankshah.couplings.impl.DoorBlockCoupling;
+import com.ryankshah.couplings.impl.TrapdoorBlockCoupling;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -9,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.redstone.Orientation;
 import net.minecraft.world.phys.BlockHitResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,6 +18,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
+
+import javax.annotation.Nullable;
 
 @Mixin(DoorBlock.class)
 abstract class DoorBlockMixin extends Block {
@@ -89,15 +93,9 @@ abstract class DoorBlockMixin extends Block {
     }
 
     @Inject(
-            method =
-                    "neighborChanged("
-                            + "Lnet/minecraft/world/level/block/state/BlockState;"
-                            + "Lnet/minecraft/world/level/Level;"
-                            + "Lnet/minecraft/core/BlockPos;"
-                            + "Lnet/minecraft/world/level/block/Block;"
-                            + "Lnet/minecraft/core/BlockPos;"
-                            + "Z"
-                            + ")V",
+            method = "neighborChanged",
+            require = 1,
+            allow = 1,
             at =
             @At(
                     shift = At.Shift.AFTER,
@@ -109,18 +107,9 @@ abstract class DoorBlockMixin extends Block {
                                     + "Lnet/minecraft/world/level/block/state/BlockState;"
                                     + "I"
                                     + ")Z"),
-            require = 1,
-            allow = 1,
             locals = LocalCapture.CAPTURE_FAILHARD)
     private void neighborChanged(
-            final BlockState state,
-            final Level level,
-            final BlockPos pos,
-            final Block block,
-            final BlockPos offset,
-            final boolean moved,
-            final CallbackInfo ci,
-            final boolean powered) {
-        DoorBlockCoupling.neighborChanged(state, level, pos, powered);
+            BlockState p_57547_, Level p_57548_, BlockPos p_57549_, Block p_57550_, @Nullable Orientation p_364404_, boolean p_57552_, CallbackInfo ci) {
+        DoorBlockCoupling.neighborChanged(p_57547_, p_57548_, p_57549_, p_57548_.hasNeighborSignal(p_57549_));
     }
 }

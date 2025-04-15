@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    api "fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:21.1.3"
+    api "fuzs.forgeconfigapiport:forgeconfigapiport-neoforge:21.4.1"
 }
 
 neoForge {
@@ -34,7 +34,7 @@ neoForge {
             client()
         }
         data {
-            data()
+            clientData()
         }
         server {
             server()
