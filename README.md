@@ -12,4 +12,4 @@ Coupled usage of doors, fence gates, and trapdoors
 
 This mod is recommended on both the client and server for more responsive block updates
 
-Ported to Fabric, NeoForge and Forge 1.21.1+ from the original mod by [ChloeDawn](https://github.com/ChloeDawn/Couplings) - Original Mod for <1.20.1 on Fabric available at [CurseForge](https://www.curseforge.com/minecraft/mc-mods/couplings) - [Modrinth](https://modrinth.com/mod/couplings)
+Ported to Fabric and NeoForge (Minecraft 26.1) from the original mod by [ChloeDawn](https://github.com/ChloeDawn/Couplings) - Original Mod for <1.20.1 on Fabric available at [CurseForge](https://www.curseforge.com/minecraft/mc-mods/couplings) - [Modrinth](https://modrinth.com/mod/couplings)
